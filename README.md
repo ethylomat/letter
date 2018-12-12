@@ -15,7 +15,7 @@ Example
 -------
 ```console
 # Create a project directory
-foo@bar:~$ cookiecutter gh:ethylomat/brief
+foo@bar:~$ cookiecutter gh:ethylomat/letter
 title []: Testbrief
 From_name [Maximilian Mustermann]: 
 From_addr [Musterstraße 1\\11010 Musterstadt]: 
