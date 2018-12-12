@@ -1,0 +1,80 @@
+% Created: {% now 'local' %}
+% Title: {{ cookiecutter.title }}
+
+\documentclass[
+	german,
+	fromalign=left, % Aligns the from address to the right
+	foldmarks=true, % Prints small fold marks on the left of the page
+]{scrlttr2}
+
+\input{head}
+
+\setkomavar{fromname}{ {{- cookiecutter.From_name -}} } % Your name used in the from address
+\setkomavar{fromaddress}{ {{- cookiecutter.From_addr -}}\\} % Your address
+\setkomavar{backaddress}{ {{- cookiecutter.From_name -}}\\{{- cookiecutter.From_addr_short -}} } % Your address
+\setkomavar{subject}[]{ {{- cookiecutter.Subject -}} }
+\setkomavar{signature}{ }
+{% if cookiecutter.Place != ''%}
+\setkomavar{place}{ {{- cookiecutter.Place -}} }
+{% else %}
+%\setkomavar{place}{}
+{% endif %}
+{% if cookiecutter.From_phone != ''%}
+\setkomavar{fromphone}{ {{- cookiecutter.From_phone -}} }
+{% else %}
+%\setkomavar{fromphone}{}
+{% endif %}
+{% if cookiecutter.From_email != ''%}
+\setkomavar{fromemail}{ {{- cookiecutter.From_email -}} }
+{% else %}
+%\setkomavar{fromemail}{}
+{% endif %}
+
+\addtokomafont{fromname}{\scriptsize}
+\addtokomafont{fromaddress}{\scriptsize}
+\pagestyle{headings}
+
+{% if cookiecutter.Date == 'today'%}
+	\date{\today} % Date of the letter
+{% else %}
+	\date{ {{- cookiecutter.Date -}} } % Date of the letter
+{% endif %}
+
+\begin{document}
+
+
+\begin{letter}{
+	{{- cookiecutter.To_addr -}}
+}
+
+\opening{Sehr geehrter Herr ...}
+
+
+% Add content here
+%
+
+\enlargethispage{3cm}
+
+{% if cookiecutter.Signature == 'y'%}
+	\vspace*{1em}
+	\closing{Viele Grüße\\
+		\hspace{-0.3cm}
+		\includegraphics[scale=0.6]{signature.png} \\
+		{{- cookiecutter.From_name -}}
+	}
+{% else %}
+	\closing{Viele Grüße\\
+		\fromname{ {{- cookiecutter.From_name -}} }
+	}
+{% endif %}
+
+{% if cookiecutter.Enclosings != ''%}
+	\encl{ {{- cookiecutter.Enclosings -}} }
+{% endif %}
+
+\end{letter}
+\end{document}
+
+
+
+

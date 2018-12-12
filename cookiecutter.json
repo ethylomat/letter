@@ -1,0 +1,16 @@
+{
+	"title": "",
+    "From_name": "Peter Mustermann",
+    "From_addr": "Musterstraße 1\\\\10001 Musterstadt",
+    "From_addr_short": "Musterstraße 1\\\\10001 Musterstadt",
+    "From_phone": "+49 111 - 222 333 44",
+    "From_email": "Mustermann@example.com",
+    "To_name": "Max Mustermann",
+    "To_addr": "Max Mustermann\\\\Musterstraße 42\\\\10001 Musterstadt",
+    "Date": "today",
+    "Place": "Musterstadt",
+    "Subject": "",
+    "Enclosings": "",
+    "Signature": "y",
+    "_extensions": ["jinja2_time.TimeExtension"]
+}
