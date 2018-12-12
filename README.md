@@ -9,7 +9,7 @@ Install `cookiecutter` command line: `pip install cookiecutter`
 
 Usage
 -----
-Generate a new Cookiecutter template layout: `cookiecutter gh:ethylomat/brief`    
+Generate a new Cookiecutter template layout: `cookiecutter gh:ethylomat/letter`    
 
 Example
 -------
